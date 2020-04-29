@@ -1,0 +1,10 @@
+total 44
+drwxr-xr-x 4 root root  4096 Apr 19 03:08 .
+drwxr-xr-x 3 root root  4096 Apr 16 20:00 ..
+-rw-r--r-- 1 root root  1024 Apr 19 03:08 .pruebas.php.swp
+-rwxr-xr-x 1 root root   168 Apr 18 20:49 date.sh
+-rw-r--r-- 1 root root   213 Apr 16 20:29 error.html
+drwxrwxrwx 2 root root  4096 Apr 19 03:05 fix
+-rw-r--r-- 1 root root 10908 Apr 16 20:26 index.html
+drwxr-xr-x 6 root root  4096 Apr 19 02:50 maestrefestival
+-rw-r--r-- 1 root root  2594 Apr 19 03:08 pruebas.php

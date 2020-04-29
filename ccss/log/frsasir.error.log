@@ -1,0 +1,2 @@
+[Tue Apr 28 22:47:00.392854 2020] [php7:error] [pid 12981] [client 192.168.100.100:55916] script '/var/www/html/frsasir/dns.php' not found or unable to stat, referer: http://192.168.100.100:8080/frsasir/dhcpd.php
+[Tue Apr 28 22:47:04.674893 2020] [php7:error] [pid 12981] [client 192.168.100.100:55916] script '/var/www/html/frsasir/ldap.php' not found or unable to stat, referer: http://192.168.100.100:8080/frsasir/firewall.php

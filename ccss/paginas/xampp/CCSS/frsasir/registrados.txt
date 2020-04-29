@@ -1,0 +1,26 @@
+nombre;dni;sexo;curso;año;asignaturas
+fer;71723777;w;1;4;2;2;
+Marchan;71756487;g;1;4;1;3;
+Andrea;05468742;n;2;1;1;2;
+Andres;05468745M;1;3;1;4
+Andres;05468745M;1;3;1;4
+Juan;04567842T;1;4;1;3
+Juan;34524325E;1;1;1;7
+Juan;34524325E;1;1;1;7
+Juan;34524325E;1;5;1;7
+Juan;34524325E;1;4;1;7
+Fernando;71723777W;1;4;2;6
+Fernando;71723777W;Masculino;Grado Superior Informatica;2º ;6
+Fernando;71723777W;Masculino;Grado Superior Informatica;2º;5
+Maria;05489786H;Femenino;Grado Medio Mecanica;1º;3
+Julian;54889753A;Masculino;Grado Superior Mecanica;2º;7
+Juanito;78945612V;Masculino;Grado Medio Mecanica;1º;1
+Angela;05487987G;Femenino;Grado Medio Mecanica;1º;7
+Juan manuel sanchez;71723777G;Masculino;Grado Superior Mecanica;1º;6
+Andres Gonzalez;78459546A;Masculino;Grado Superior Informatica;1º;1
+Fernando Roca;71723777W;Masculino;Grado Superior Informatica;2º;7
+Rosa;05684426D;Femenino;Grado Medio Informatica;1º;3
+Perico Palotes;12345678E;Masculino;Grado Medio Mecanica;2º;3
+Soledad Sanchez;78984561J;Femenino;Grado Superior Informatica;2º;7
+Andres;71723778A;Masculino;Grado Superior Mecanica;1º;2
+Andres;71723778A;Masculino;Grado Superior Mecanica;1º;2
