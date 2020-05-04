@@ -1,0 +1,3 @@
+#! /bin/bash
+cp /var/www/html/frsasir/proximonft.txt /etc/nftables.conf
+exit;

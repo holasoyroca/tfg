@@ -42,28 +42,33 @@
 		</div>
 	</div>
 	<div id="side">
-		<b><u>CONFIGURACÓN ACTUAL:</u></b><br><br>
-			
-			<?php 
-				$fp = fopen("/etc/nftables.conf", "r");
-				while (!feof($fp)){
-					$linea = fgets($fp);
-					echo $linea;
+		
+	<h1>Terminal</h1>
+		<br>
+		<?php //exec('sh /var/www/html/frsasir/nftfinal.sh') ?>
+		<?php 
+				$fp2 = fopen("/var/www/html/frsasir/nftfinal.txt", "r");
+				while (!feof($fp2)){
+					$linea2 = fgets($fp2);
+					echo $linea2;
 					echo "<br>";
 				}
-				fclose($fp);
-			?>
-			<form action="dhcpsos.php" method="post"  id="sosform" name="sosform">
-				<input type="submit" value="¡SOS!" name="sos" id="sos" style="color:azure;background-color: black; float:right;">
-			</form>
+				fclose($fp2);
+		?>
+		
+		<form action="ejecutarnft.php"  method="post" id="formnexec" name="formexec">
+			<strong><b> > </b></strong>
+			 <input type="submit" id="ejecutar" value="Ejecutar">
 			
+		</form>
+		
 	</div>
 	<div class="display">
 		<h2>FIREWALL</h2><br>
 		<div class="form" >
 			<!-- <form action="encender.php" method="post"  id="encenderform" name="encenderform"><input type="submit" value="Encender" name="encender" id="encender"></form>-->
 			<div style="background-color: #036464b0;">
-				<form action="validarnfs.php"  method="post" id="formnfs" name="formnfs">
+				<form action="confirmarnft.php"  method="post" id="formnfs" name="formnfs">
 					<fieldset>
 						<legend>&nbsp;&nbsp;&nbsp; <b style="color:azure; text-shadow:black;">Configuracion NFSTABLE  </b><br></legend>
 						<br> 
@@ -71,14 +76,22 @@
 							<br>
 							<h1>NFSTABLE</h1>
 							<br>
-							<input type="checkbox" id="filtrado" name="filtrado" onclick='activaChecks();'/> HABILITAR FILTRADO WEB. <br>
+							<input type="checkbox" id="filtrado" name="filtrado" onclick='activaChecks();' /> HABILITAR FILTRADO WEB. <br>
 							<sub>(Accede a FRSASIR solo desde red interna.)</sub><br><br>
 							<div id="formin2">
-								<input type="radio" name="filtra" id="filtrauto" value="filtrauto" onclick='activaChecks();' /> AUTOMATICO <sub>Recomendado.</sub> 
+								<input type="radio" name="filtra" id="filtrauto" value="filtrauto" onclick='activaChecks();' checked/> AUTOMATICO <sub>Recomendado.</sub> 
 								<br><br>
 								<input type="radio" name="filtra" value="filtrpers" id="filtrapers" onclick='activaChecks();' /> Avanzado. <br><br>
-								<textarea id="textpers" name="textpers" rows="10" cols="40">HOLA</textarea><br> 
-							</div>	
+								<div id="formin2"> <textarea id="textpers" name="textpers" rows="10" cols="40"><?php 
+																													$fp2 = fopen("/var/www/html/frsasir/nftejemplo.txt", "r");
+																													while (!feof($fp2)){
+																														$linea2 = fgets($fp2);
+																														echo $linea2;
+																													}
+																													fclose($fp2);
+																													?> </textarea><br> </div>
+							</div>
+							<br>	
 							<hr>
 							<br>
 							<br>
@@ -115,20 +128,34 @@
 
 	<br><br><br><br>
 	<div id="footer">
-		<!--
-		<h1>Equipos Clientes</h1>
-		<br>
-		<?php exec('dhcp-lease-list > /var/www/html/frsasir/dhcplease.txt'); ?>
-		<?php 
-				$fp2 = fopen("/var/www/html/frsasir/dhcplease.txt", "r");
-				while (!feof($fp2)){
-					$linea2 = fgets($fp2);
-					echo $linea2;
+		
+	<b><u>CONFIGURACÓN ACTUAL:</u></b><br><u>/etc/nftables.conf</u><br><br>
+			
+			<?php 
+			
+				exec('sudo nft list ruleset > ficheronftables.conf');
+				exec('sudo cp ficheronftables.conf /etc/nftables.conf');
+				$fp = fopen("/etc/nftables.conf", "r");
+				while (!feof($fp)){
+					$linea = fgets($fp);
+					echo $linea;
 					echo "<br>";
 				}
-				fclose($fp2);
+				fclose($fp);
 			?>
-			-->
+			<form action="dhcpsos.php" method="post"  id="sosform" name="sosform">
+				<input type="submit" value="¡SOS!" name="sos" id="sos" style="color:azure;background-color: black; float:right;">
+			</form>
+			
+
+
+
+
+
+
+
+
+		
 			
 	</div>
 </body>
