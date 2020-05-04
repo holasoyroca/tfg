@@ -239,3 +239,26 @@ h3 {
 #nano {
 	font-size: 4px;
 }
+
+.boton{
+	font-size:10px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+	color:white;
+	background:#008080;
+	border:0px;
+	width:80px;
+	height:19px;
+   }
+
+   .botonayuda{
+	float: right ;
+	font-size:10px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+	color:white;
+	background:#008080;
+	border:0px;
+	width:80px;
+	height:19px;
+   }

@@ -21,11 +21,18 @@
 
 						
 			}	
+		
+		function ventanaSecundaria (URL){ 
+   				window.open(URL,"ayudanft","width=1200,height=300,scrollbars=YES") 
+			} 
+
+
 
 	</script>
 
 </head>
 <body onload="estado();">
+
 	<div id="header" >
 		<div id="maestre"><img src="images/logo.png" width="75" height="50" ></div>
 		<div class="wrap">
@@ -58,7 +65,7 @@
 		
 		<form action="ejecutarnft.php"  method="post" id="formnexec" name="formexec">
 			<strong><b> > </b></strong>
-			 <input type="submit" id="ejecutar" value="Ejecutar">
+			 <input type="submit" id="ejecutar" value="EJECUTAR" class="boton">
 			
 		</form>
 		
@@ -89,7 +96,9 @@
 																														echo $linea2;
 																													}
 																													fclose($fp2);
-																													?> </textarea><br> </div>
+																													?> </textarea><br>Recuerda poner ";" al final de cada orden nft.
+								 </div>
+								 <a class="botonayuda" href="javascript:ventanaSecundaria('nftayuda.txt')"> AYUDA</a>
 							</div>
 							<br>	
 							<hr>
@@ -97,7 +106,7 @@
 							<br>
 							<h1>NAT</h1><br>
 							<div id="formin2">
-								<input type="checkbox" id="nat" name="nat" onclick='activaChecks();' /> HABILITAR FILTRADO WEB. <br>
+								<input type="checkbox" id="nat" name="nat" onclick='activaChecks();' /> HABILITAR NAT. <br>
 								<div id="formin2">
 								Interfaz:
 									<select name="ifname">

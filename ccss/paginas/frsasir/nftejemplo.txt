@@ -1,3 +1,3 @@
-sudo nft add table ip filtradoweb
-sudo nft add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0\; policy drop \;}
-sudo nft add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
+sudo nft add table ip filtradoWeb;
+sudo nft add chain ip filtradoWeb prohibicionEntrada {type filter hook input priority 0\; policy drop\;} ;
+sudo nft add rule ip filtradoWeb prohibicionEntrada iifname enp0s3 tcp dport 80 accept ;

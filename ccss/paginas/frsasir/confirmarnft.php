@@ -53,6 +53,7 @@
 
 			//$ar=fopen("nftfinal.txt","w") or die("Problemas con la creacion");
 				fputs($ar,$textpers);
+				fputs($ar,"\n");
 				
 		}
 	}															//SI NO CHECKEA FILTRADOWEB
@@ -77,7 +78,7 @@
 	} 														//SI CHECKEA LA PERSONALIZADA
 	else{
 
-				fputs($ar," ");
+				fputs($ar,"\n");
 			
 	}
 									//SE CIERRA EL SCRIPT
