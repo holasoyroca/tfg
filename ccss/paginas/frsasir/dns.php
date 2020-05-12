@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" href="css/main2.css" type="text/css" />
-	<title>FRSASIR - FIREWALL</title>
+	<title>FRSASIR - DNS</title>
 	
 	<script type="text/javascript"> 
 		

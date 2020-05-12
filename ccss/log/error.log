@@ -1,264 +1,3 @@
-[Mon May 04 00:08:32.307580 2020] [mpm_prefork:notice] [pid 22648] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Mon May 04 00:08:32.307595 2020] [core:notice] [pid 22648] AH00094: Command line: '/usr/sbin/apache2'
+[Tue May 12 18:20:20.862702 2020] [mpm_prefork:notice] [pid 697] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
+[Tue May 12 18:20:20.862717 2020] [core:notice] [pid 697] AH00094: Command line: '/usr/sbin/apache2'
 To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-Error: syntax error, unexpected type, expecting end of file or newline or semicolon
-add rule ip filtradoweb denegacionApache tcp dport 80 drop type tcp dport http drop
-                                                           ^^^^
-Error: syntax error, unexpected type, expecting end of file or newline or semicolon
-add rule ip filtradoweb denegacionApache tcp dport 80 drop type tcp dport http drop
-                                                           ^^^^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-flush ruleset
-             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb denegacionApache {type filter hook prerouting priority 0 ; policy accept;}
-                                                                                                   ^
-Error: Could not process rule: No such file or directory
-add rule ip filtradoweb denegacionApache tcp dport 80 accept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-flush ruleset
-             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb denegacionApache {type filter hook prerouting priority 0 ; policy accept;}
-                                                                                                   ^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: No such file or directory
-add rule ip filtradoweb denegacionApache tcp dport 80 drop
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-Error: syntax error, unexpected string
-flush rulesetsudo nft add table ip filtradoweb
-      ^^^^^^^^^^^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb denegacionApache {type filter hook prerouting priority 0 ; policy accept;}
-                                                                                                   ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb denegacionApache tcp dport 80 drop
-                                                          ^
-Error: syntax error, unexpected string
-flush rulesetsudo nft add table ip filtradoweb
-      ^^^^^^^^^^^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb denegacionApache {type filter hook prerouting priority 0 ; policy accept;}
-                                                                                                   ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb denegacionApache tcp dport 80 drop
-                                                          ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb denegacionApache {type filter hook prerouting priority 0 ; policy accept;}
-                                                                                                   ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb denegacionApache tcp dport 80 drop
-                                                          ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-/var/www/html/frsasir/nftfinal.sh: 7: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add chain ip filtradoweb prohibicionEntrada {type filter hook input priority 0; policy drop ;}
-                                                                                              ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add rule ip filtradoweb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-                                                                             ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-adduser: To avoid problems, the username should consist only of
-letters, digits, underscores, periods, at signs and dashes, and not start with
-a dash (as defined by IEEE Std 1003.1-2001). For compatibility with Samba
-machine accounts $ is also supported at the end of the username
-adduser: To avoid problems, the username should consist only of
-letters, digits, underscores, periods, at signs and dashes, and not start with
-a dash (as defined by IEEE Std 1003.1-2001). For compatibility with Samba
-machine accounts $ is also supported at the end of the username
-adduser: To avoid problems, the username should consist only of
-letters, digits, underscores, periods, at signs and dashes, and not start with
-a dash (as defined by IEEE Std 1003.1-2001). For compatibility with Samba
-machine accounts $ is also supported at the end of the username
-useradd: invalid user name 'roman'
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-[Mon May 04 17:31:46.015347 2020] [mpm_prefork:notice] [pid 22648] AH00169: caught SIGTERM, shutting down
-[Mon May 04 17:31:46.083178 2020] [mpm_prefork:notice] [pid 7242] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Mon May 04 17:31:46.083218 2020] [core:notice] [pid 7242] AH00094: Command line: '/usr/sbin/apache2'
-[Mon May 04 17:31:50.493443 2020] [mpm_prefork:notice] [pid 7242] AH00171: Graceful restart requested, doing restart
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
-[Mon May 04 17:31:50.545838 2020] [mpm_prefork:notice] [pid 7242] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Mon May 04 17:31:50.545848 2020] [core:notice] [pid 7242] AH00094: Command line: '/usr/sbin/apache2'
-[Mon May 04 17:31:51.898798 2020] [mpm_prefork:notice] [pid 7242] AH00169: caught SIGTERM, shutting down
-[Mon May 04 17:31:51.966999 2020] [mpm_prefork:notice] [pid 7283] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Mon May 04 17:31:51.967038 2020] [core:notice] [pid 7283] AH00094: Command line: '/usr/sbin/apache2'
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-ls: cannot access ''$'\r': No such file or directory
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-ls: cannot access ''$'\r': No such file or directory
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: Could not process rule: Table 'filtradoWeb' does not exist
-add chain ip filtradoWeb prohibicionEntrada {type filter hook input priority 0; policy drop;}
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: No such file or directory
-add rule ip filtradoWeb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: Could not process rule: Table 'filtradoWeb' does not exist
-add chain ip filtradoWeb prohibicionEntrada {type filter hook input priority 0; policy drop;}
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: No such file or directory
-add rule ip filtradoWeb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: Could not process rule: Table 'filtradoWeb' does not exist
-add chain ip filtradoWeb prohibicionEntrada {type filter hook input priority 0; policy drop;}
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: No such file or directory
-add rule ip filtradoWeb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: syntax error, unexpected junk, expecting end of file or newline or semicolon
-add table ip filtradoweb
-                        ^
-Error: Could not process rule: Table 'filtradoWeb' does not exist
-add chain ip filtradoWeb prohibicionEntrada {type filter hook input priority 0; policy drop;}
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: No such file or directory
-add rule ip filtradoWeb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: Table 'filtradoWeb' does not exist
-add chain ip filtradoWeb prohibicionEntrada {type filter hook input priority 0; policy drop;}
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-Error: Could not process rule: No such file or directory
-add rule ip filtradoWeb prohibicionEntrada iifname enp0s3 tcp dport 80 accept
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-[Mon May 04 18:00:09.553601 2020] [mpm_prefork:notice] [pid 7283] AH00171: Graceful restart requested, doing restart
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
-[Mon May 04 18:00:09.617660 2020] [mpm_prefork:notice] [pid 7283] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Mon May 04 18:00:09.617670 2020] [core:notice] [pid 7283] AH00094: Command line: '/usr/sbin/apache2'
-[Mon May 04 18:00:12.080976 2020] [mpm_prefork:notice] [pid 7283] AH00169: caught SIGTERM, shutting down
-[Mon May 04 18:00:12.149631 2020] [mpm_prefork:notice] [pid 8332] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Mon May 04 18:00:12.149669 2020] [core:notice] [pid 8332] AH00094: Command line: '/usr/sbin/apache2'
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
-/var/www/html/frsasir/nftfinal.sh: 4: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 5: /var/www/html/frsasir/nftfinal.sh: : not found
-/var/www/html/frsasir/nftfinal.sh: 6: /var/www/html/frsasir/nftfinal.sh: : not found

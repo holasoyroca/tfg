@@ -1,4 +1,3 @@
 Reading leases from /var/lib/dhcp/dhcpd.leases
-Processing: 50% completeMAC                IP              hostname       valid until         manufacturer        
+MAC                IP              hostname       valid until         manufacturer        
 ===============================================================================================
-08:00:27:e9:96:4d  192.168.1.55    DESKTOP-DIBRH5 2020-05-04 17:04:48 -NA-                
