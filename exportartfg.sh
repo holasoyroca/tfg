@@ -5,6 +5,10 @@ cp -r /etc/apache2/ ccss/apache/
 cp -r /etc/netplan/ ccss/netplan/
 cp -r /var/log/apache2/ ccss/log/
 cp -r /var/www/html/ ccss/paginas/
+cp -r /var/cache/bind/ ccss/dns/
+cp -r /etc/bind/named.conf.local ccss/dns/
+
+
 
 chmod -R 777 ccss
 chown -R froca ccss
@@ -12,14 +16,14 @@ chgrp -R froca ccss
 
 echo 'Todo guardado en la carpeta "ccss" correctamente.'
 
-# UpToGit 0.1
+# UpToGit 0.2
 # Actualiza facilmente tu repositorio Git
-# (CC) 2011 Alfonso Saavedra "Son Link"
-# http://sonlinkblog.blogspot.com
+# (CC) 2020 Fernando Roca 
+# http://frsasir.blogspot.com
 # Bajo licencia GNU/GPL
 
-# Modo de uso: copia o mueve este script a /usr/bin o /usr/local/bin y desde el directorio donde se encuentre la copia de un repo git, ejecútalo de esta manera:
-# uptogit <ficheros>
+# Modo de uso: copia o mueve este script a /home/gits y desde el directorio donde se encuentre la copia de un repo git, ejecútalo de esta manera:
+# sudo sh exportartfg.sh
 
 # Comprobamos si el directorio en el que estamos es de un repositorio git
 #if [ ! -d '.git' ]; then
