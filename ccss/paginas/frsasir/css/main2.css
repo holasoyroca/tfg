@@ -236,6 +236,14 @@ h3 {
 	font-size: 1.9em; 
 	}
 
+#botones2 {
+	float: right ; 
+	padding-right: 10% ; 
+	color: #fff; 
+	letter-spacing: .2em; 
+	font-size: 1.9em; 
+	}
+
 #nano {
 	font-size: 4px;
 }
@@ -262,3 +270,8 @@ h3 {
 	width:80px;
 	height:19px;
    }
+
+iframe {
+	width: 100%;
+	height:1200px;
+}

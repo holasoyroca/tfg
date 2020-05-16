@@ -1,0 +1,24 @@
+ 
+<u>IP SERVIDOR</u>:  frsasir.net. <br>
+<u>NOMBRE DEL SERVIDOR:</u>  frsasir.net. <br>
+<u>NUMERO DE VERSION</u>:    3		 <br>
+<u>TIEMPO DE REFRESCO</u>:    6H		 <br>
+<u>TIEMPO DE REINTENTOS</u>:    3		 <br>
+<br> <u>REGISTROS</u>:<br> @             IN   NS  servidor
+servidor      IN   A   192.168.1.1
+contabilidad  IN   A   192.168.1.25
+www           IN   A   192.168.1.1
+diego         IN   A   192.168.1.114
+impresora IN A 192.168.100.150
+tv IN MX 192.168.1.100
+<br>
+<u>ZONAS</u>:  <br> 
+zone "frsasir.net"{
+ type master;
+ file "db.frsasir.net";
+};
+
+zone "1.168.192.in-addr.arpa"{
+type master;
+file "db.192.168.1";
+}; <br>

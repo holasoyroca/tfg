@@ -1,0 +1,18 @@
+$ORIGIN frsasir.net.
+
+$TTL 86400 ; 1 dia
+
+@   IN   SOA   frsasir.net. administrador.frsasir.net.(
+
+   2		;numero version
+   6H		;tiempo de refresco
+   1H		;tiempo de reintentos
+   2W		;expira
+   10800	;minimo (3horas)
+)
+
+;servidor	internet	NameServer
+;Registros:
+@             IN   NS  servidor
+servidor IN A 192.168.1.1
+www IN A 192.168.1.1

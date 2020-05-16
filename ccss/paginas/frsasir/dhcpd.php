@@ -105,6 +105,9 @@
 			</form>
 	</div>
 	<div class="display">
+		<div id="botones1">	
+			<br><p>Estado DHCP: <?php echo exec('service isc-dhcp-server status |grep "Active:"|cut -d" " -f 5'); ?></p>
+		</div>
 		<h2>DHCP</h2><br>
 		<div class="form" >
 			<form action="encender.php" method="post"  id="encenderform" name="encenderform">
@@ -117,9 +120,6 @@
 				<form action="validar.php"  method="post" id="form1" name="form1">
 					<fieldset>
 						<legend>&nbsp;&nbsp;&nbsp; <b style="color:azure; text-shadow:black;">Configuracion del servidor DHCPD</b><br></legend>
-					<div id="botones1">	
-						<br><p>Estado: <?php echo exec('service isc-dhcp-server status |grep "Active:"|cut -d" " -f 5'); ?></p>
-					</div>
 					<br> 
 					<div id="formin">  
 						<br>

@@ -1,0 +1,11 @@
+1
+2
+3
+4
+5
+6
+hola adios
+
+impresora IN A 192.168.1.10
+tv IN A 192.168.100.150
+impresora IN CNAME 192.168.1.10

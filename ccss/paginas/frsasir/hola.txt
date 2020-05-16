@@ -1,0 +1,18 @@
+   6H		;tiempo de refresco
+   1H		;tiempo de reintentos
+   2W		;expira
+   10800	;minimo (3horas)
+)
+
+;servidor	internet	NameServer
+;Registros:
+@             IN   NS  servidor
+servidor      IN   A   192.168.1.1
+contabilidad  IN   A   192.168.1.25
+www           IN   A   192.168.1.1
+diego         IN   A   192.168.1.114
+impresora IN A 192.168.100.150
+tv IN MX 192.168.1.100
+tv IN NS 192.168.100.150
+tv IN NS 192.168.100.150
+prueba1 IN A 192.168.1.156

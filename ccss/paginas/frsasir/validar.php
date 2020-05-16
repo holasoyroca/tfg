@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" href="css/main2.css" type="text/css" />
-	<title>MaestreFestival</title>
+	<title>FRSASIR - DHCP</title>
 <head>
 <body>
 

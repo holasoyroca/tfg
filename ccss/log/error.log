@@ -1,3 +1,0 @@
-[Tue May 12 18:20:20.862702 2020] [mpm_prefork:notice] [pid 697] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Tue May 12 18:20:20.862717 2020] [core:notice] [pid 697] AH00094: Command line: '/usr/sbin/apache2'
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
