@@ -21,7 +21,6 @@
 		}
 
 		function estado(){
-			activaRango();
 			var estadodns2 = '<?php echo "$estadodns" ?> ';
 			if (estadodns2 == "inactive "){
 					frm = document.forms['apagarform'];
@@ -29,12 +28,12 @@
 					ele.disabled=true;
 					deshab();
 
+
 			}
 			else {
 					frm = document.forms['encenderform'];
 					for(i=0; ele=frm.elements[i]; i++)
 					ele.disabled=true;
-					//alert("hola");
 					hab();
 			};
 		}	
@@ -44,10 +43,10 @@
 				for(i=1; ele=frm.elements[i]; i++)
 				ele.disabled=true;	
 			}
-			function hab(){
+			//function hab(){
 			//alert('hab2');
-			alert(estadodns2);
-			}	
+			//alert(estadodns2);
+			//}	
 
 function prueba(){
 	alert("holas");
@@ -85,21 +84,21 @@ function prueba(){
 <body onload="estado();">
 	<div id="header" >
 		<div id="maestre"><img src="images/logo.png" width="75" height="50" ></div>
-		<div class="wrap">
-			<!--	<p><br />El mejor festival de Ciudad Real dentro de un instituto!!!</p>-->
-			<h1 id="logotext"><a href="#">FRSASIR</a>
-		</h1>
-		<ul id="menu" >
-			<li><a  href="dhcpd.php">DHCP</a></li>
-			<li><a  class="current" href="dns.php">DNS</a></li>
-			<li><a href="firewall.php">FIREWALL</a></li>
-			<li><a href="ldap.php">USUARIOS</a></li>
-			<li ><a class="last" href="contacto.html">Contact Us</a></li>
-			<li class="last"><a href="index.html">Salir</a></li>
-		</ul>
-	</div>
-</div>
-<div id="side">
+			<div class="wrap">
+				<!--	<p><br />El mejor festival de Ciudad Real dentro de un instituto!!!</p>-->
+				<h1 id="logotext"><a href="#">FRSASIR</a>
+			</h1>
+			<ul id="menu" >
+				<li><a  href="dhcpd.php">DHCP</a></li>
+				<li><a  class="current" href="dns.php">DNS</a></li>
+				<li><a href="firewall.php">FIREWALL</a></li>
+				<li><a href="ldap.php">USUARIOS</a></li>
+				<li ><a class="last" href="contacto.html">Contact Us</a></li>
+				<li class="last"><a href="index.html">Salir</a></li>
+			</ul>
+			</div>
+		</div>
+		<div id="side">
 	
 		<b><u>CONFIGURACÓN ACTUAL:</u></b><br><br>
 		<u>PARAMETROS</u>: <br><br>
@@ -145,29 +144,36 @@ function prueba(){
 			<form action="dnssos.php" method="post"  id="sosform" name="sosform">
 				<input type="submit" value="¡SOS!" name="sos" id="sos" style="color:azure;background-color: black; float:right;">
 			</form>
-	</div>
+		</div>
 	<div class="display">
-
-<form action="prueba.php" method="post"  id="pruebadns" name="pruebadns">
-	<input type="submit" value="funciona" name="pruebadns" id="pruebadns">	
-	<a href="apagardns.php"><img src="images/logo.png" width="75" height="50"> </a>
-</form>
-<input type="checkbox" name="botonprueba" id="botonprueba" onclick='prueba();' />
-
-
-
-
 		<div id="botones1">	
 			<br><p>Estado DNS: <?php echo exec('service bind9 status |grep "Active:"|cut -d" " -f 5'); ?></p>
 		</div>
 		<h2>DNS</h2><br>
 		<div class="form" >
+
+
 			<form action="encenderdns.php" method="post"  id="encenderform" name="encenderform">
-				<input type="submit" value="Encender" name="encenderdns" id="encenderdns">
+				<input type="submit" value="Encender" name="encender" id="encender">
 			</form>
 			<form action="apagardns.php" method="post"  id="apagarform" name="apagarform">
-				<input type="submit" value="Apagar" name="apagardns" id="apagardns">	
+				<input type="submit" value="Apagar" name="apagar" id="apagar">	
 			</form>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<a style="color:black;"  href="reiniciardns.php">REINICIAR DNS</a>
 			<div style="background-color: #036464b0;">
 			<form action="dnsinsertar.php"  method="post" id="forminsert" name="forminsert">
@@ -239,27 +245,6 @@ function prueba(){
 					</form>					
 					
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-						
-						
-						
-						
-						
 						
 						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 						
@@ -268,28 +253,6 @@ function prueba(){
 			</div>
 		</div>
 	</div>
-
-	<br><br><br><br>
-	<div id="footer">
-		<h1>Equipos Clientes</h1>
-		<br>
-		<?php exec('dhcp-lease-list > /var/www/html/frsasir/dhcplease.txt'); ?>
-		<?php 
-				$fp2 = fopen("/var/www/html/frsasir/dhcplease.txt", "r");
-				while (!feof($fp2)){
-					$linea2 = fgets($fp2);
-					echo $linea2;
-					echo "<br>";
-				}
-				fclose($fp2);
-			?>
-		
-			
-	</div>
-
-
-
-
 
 </body>
 </html>

@@ -15,6 +15,29 @@
 
 
 
+
+
+<form action="encenderdns.php" method="post"  id="encenderform" name="encenderform">
+				<input type="submit" value="Encender" name="encenderdns" id="encenderdns">
+			</form>
+			<form action="apagardns.php" method="post"  id="apagarform" name="apagarform">
+				<input type="submit" value="Apagar" name="apagardns" id="apagardns">	
+			</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $registro2 = 1;
     $registro2 = exec('cat /var/cache/bind/db.frsasir.net |grep -n $borrareg|cut -d":" -f1;');
     echo ("numero:");
