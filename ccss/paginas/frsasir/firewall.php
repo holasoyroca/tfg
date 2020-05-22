@@ -43,7 +43,6 @@
 				<li><a  href="dns.php">DNS</a></li>
 				<li><a class="current" href="firewall.php">FIREWALL</a></li>
 				<li><a href="ldap.php">USUARIOS</a></li>
-				<li ><a class="last" href="contacto.html">Contact Us</a></li>
 				<li class="last"><a href="index.html">Salir</a></li>
 			</ul>
 		</div>
