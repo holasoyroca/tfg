@@ -1,0 +1,21 @@
+$ORIGIN 1.168.192.in-addr.arpa.
+
+$TTL 86400 ; 1 dia
+
+@   IN   SOA   master.frsasir.net. administrador.master.frsasir.net.(
+
+   1		;numero version
+   6H		;tiempo de refresco
+   1H		;tiempo de reinitentos
+   2W		;expira
+   10800	;minimo (3horas)
+)
+
+;servidor	internet	NameServer
+
+ IN NS master.frsasir.net.
+1 IN PTR frsasir.net.
+121 IN PTR diego
+1 IN PTR www
+25 IN PTR contabilidad
+

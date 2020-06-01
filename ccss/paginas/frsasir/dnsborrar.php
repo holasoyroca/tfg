@@ -12,7 +12,7 @@
         function borrar(){
             window.location.replace("dns.php");
                 }
-                //borrar();
+               borrar();
 </script>
 <?php
     $borrareg = $_REQUEST["borrareg"];

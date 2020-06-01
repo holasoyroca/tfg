@@ -15,5 +15,6 @@ $TTL 86400 ; 1 dia
 ;Registros:
 @             IN   NS  servidor
 servidor IN A 192.168.1.1
-contabilidad IN A 192.168.1.25
 www IN A 192.168.1.1
+DptoLINUX IN A 192.168.1.70
+DptoWindows IN A 192.168.1.80

@@ -1,0 +1,55 @@
+#! /bin/bash
+#	var i = 0;
+
+#contar registros
+nregistros=$(wc /var/cache/bind/db.frsasir.net |cut -d" " -f2);
+#echo "$nregistros";
+
+
+
+#Vamos a Escribir el documento temporal
+echo "\$ORIGIN 1.168.192.in-addr.arpa. ";
+echo " ";
+echo "@   IN   SOA   master.frsasir.net. administrador.master.frsasir.net.("
+echo " "
+echo "    1            ;numero version";
+echo "    6H           ;tiempo de refresco";
+echo "    1H           ;tiempo de reinitentos";
+echo "    2W           ;expira";
+echo "    10800        ;minimo (3horas)";
+echo " )"
+echo " "
+echo " ;servidor       internet        NameServer";
+echo " "
+echo "  IN NS master.frsasir.net.";
+echo " 1 IN PTR frsasir.net.";
+
+
+
+
+
+#mostrar registros
+for i in `seq 17 $nregistros`
+do
+	linea=$(head -$i /var/cache/bind/db.frsasir.net | tail -1);
+	nombre=$(echo "$linea"|cut -d" " -f1 );
+	ip=$(echo "$linea"|cut -d" " -f4 );
+	ip1=$(echo "$ip"|cut -d"." -f1 );
+	ip2=$(echo "$ip"|cut -d"." -f2 );
+	ip3=$(echo "$ip"|cut -d"." -f3 );
+	ip4=$(echo "$ip"|cut -d"." -f4 );
+
+	#echo "$linea"
+#	echo "$nombre";
+#	echo "$ip";
+#	echo "$ip4.$ip3.$ip2.$ip1";
+	echo "$ip4 IN PTR $nombre";
+done
+
+
+#cajonSastre
+	#head -$i /var/cache/bind/db.frsasir.net | tail -1
+
+
+
+

@@ -21,10 +21,22 @@
 	$range3b = $_POST["range3b"];
 	$range4a = $_POST["range4a"];
 	$range4b = $_POST["range4b"];
+	$range5a = $_POST["range5a"];
+	$range5b = $_POST["range5b"];
+	$range6a = $_POST["range6a"];
+	$range6b = $_POST["range6b"];
+	$range7a = $_POST["range7a"];
+	$range7b = $_POST["range7b"];
+	$range8a = $_POST["range8a"];
+	$range8b = $_POST["range8b"];
 	$range1 = $_POST["range1"];
 	$range2 = $_POST["range2"];
 	$range3 = $_POST["range3"];
 	$range4 = $_POST["range4"];
+	$range5 = $_POST["range5"];
+	$range6 = $_POST["range6"];
+	$range7 = $_POST["range7"];
+	$range8 = $_POST["range8"];
 	$mlt = $_POST["mlt"];
 	
 	
@@ -73,6 +85,22 @@
 		fputs($ar,'range '.$range4a.' '.$range4b.';');
 		fputs($ar,"\n");
 	}
+	if($range5=="on"){
+		fputs($ar,'range '.$range5a.' '.$range5b.';');
+		fputs($ar,"\n");
+	}
+	if($range6=="on"){
+		fputs($ar,'range '.$range6a.' '.$range6b.';');
+		fputs($ar,"\n");
+	}
+	if($range7=="on"){
+		fputs($ar,'range '.$range7a.' '.$range7b.';');
+		fputs($ar,"\n");
+	}
+	if($range8=="on"){
+		fputs($ar,'range '.$range8a.' '.$range8b.';');
+		fputs($ar,"\n");
+	}
 		fputs($ar,"}");
 		fputs($ar,"\n");
 		fclose($ar);
@@ -106,7 +134,7 @@
 					
 					<legend>&nbsp;&nbsp;&nbsp; <b><u>Comprueba que los datos son correctos</u></b>&nbsp;<br></legend>
 					<br>                                                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<div id="formin">
+					
 						<b><u>Confirmar cambios:</u></b><br>
 						<?php 
 							$fp = fopen("/var/www/html/frsasir/proximo.txt", "r");
@@ -117,7 +145,7 @@
 							}
 							fclose($fp);
 						?>
-					</div>	
+						
 					<br/><br/><br/> 
 					<p align="center"><input type="submit" value="CONFIRMAR CONFIGURACION"/> </p>
 			</form>

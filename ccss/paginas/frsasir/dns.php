@@ -9,6 +9,7 @@
 		
 		
 		<?php exec('sh /var/www/html/frsasir/dnsdocs.sh') ?>
+		<?php exec('sh /var/www/html/frsasir/invertirdns.sh') ?>
 		<?php //exec('sh /var/www/html/frsasir/dhcplease.sh') ?>
 		<?php $estadodns = exec('service bind9 status |grep Active:|cut -d" " -f 5');?>
 
@@ -93,8 +94,7 @@ function prueba(){
 				<li><a  class="current" href="dns.php">DNS</a></li>
 				<li><a href="firewall.php">FIREWALL</a></li>
 				<li><a href="ldap.php">USUARIOS</a></li>
-				<li ><a class="last" href="contacto.html">Contact Us</a></li>
-				<li class="last"><a href="index.html">Salir</a></li>
+				<li class="last"><a href="../index.html">Salir</a></li>
 			</ul>
 			</div>
 		</div>
@@ -139,6 +139,17 @@ function prueba(){
 						echo ('<option value="'.$linea.'">'.$linea.'</option>');
 					}
 				?> <br><br>	
+
+
+
+			<u>INVERSO</u>: 
+				<?php 
+					$inversosall=`cat /var/cache/bind/db.192.168.1| wc -l`;
+					for ($i = 17; $i <= $inversosall; $i++) {
+						$linea2=`head -$i /var/cache/bind/db.192.168.1 | tail -1`;
+						echo ('<option value="'.$linea2.'">'.$linea2.'</option>');
+					}
+				?> <br><br>	
 				
 
 			<form action="dnssos.php" method="post"  id="sosform" name="sosform">
@@ -149,6 +160,11 @@ function prueba(){
 		<div id="botones1">	
 			<br><p>Estado DNS: <?php echo exec('service bind9 status |grep "Active:"|cut -d" " -f 5'); ?></p>
 		</div>
+			<a style="color:black;"  href="reiniciardns.php">
+				<div id="restart">
+					<img src="images/restart.png" alt="reiniciarDNS">
+				</div>
+			</a>
 		<h2>DNS</h2><br>
 		<div class="form" >
 
@@ -159,22 +175,7 @@ function prueba(){
 			<form action="apagardns.php" method="post"  id="apagarform" name="apagarform">
 				<input type="submit" value="Apagar" name="apagar" id="apagar">	
 			</form>
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<a style="color:black;"  href="reiniciardns.php">REINICIAR DNS</a>
+			<br><br>
 			<div style="background-color: #036464b0;">
 			<form action="dnsinsertar.php"  method="post" id="forminsert" name="forminsert">
 					<fieldset>
@@ -199,23 +200,23 @@ function prueba(){
 							</tr>
 							<tr>
 								<td style="width:20%;background-color:azure;">
-										<input type="text" id="nombreg" name="nombreg" placeholder="Nombre del Registro">
+										<input type="text" id="nombreg" name="nombreg" placeholder="Nombre del Registro" required>
 									</td>
 								<td style="width:5%;background-color:azure;">
 										IN
 									</td>
 								<td style="width:5%;background-color:azure;">
-										<select name="modo" id="modo">
-											<option value="NS" selected >NS</option>
+										<select name="modo" id="modo" required>
+											<option value="NS" >NS</option>
 											<option value="A" selected >A</option>
-											<option value="MX" selected >MX</option>
-											<option value="CNAME" selected >CNAME</option>
-											<option value="PTR" selected >PTR</option>
+											<option value="MX" >MX</option>
+											<option value="CNAME" >CNAME</option>
+											<option value="PTR" >PTR</option>
 										</select>
 									</td>
 								
 								<td style="width:5%;background-color:azure;">
-										<input type="text" id="destinoreg" name="destinoreg" placeholder="Nombre del Registro">
+										<input type="text" id="destinoreg" name="destinoreg" placeholder="Direccion IP" required>
 									</td>
 							</tr>
 						</table>
@@ -228,7 +229,7 @@ function prueba(){
 				<h3>BORRAR REGISTRO</h3>
 				<form action="dnsborrar.php"  method="post" id="formborra" name="formborra">
 				Selecciona el registro que quiere borrar:     > 
-						<select id="borrareg" name="borrareg" value="Selecciona" aria-placeholder="Borrar Registro">
+						<select id="borrareg" name="borrareg" value="Selecciona" aria-placeholder="Borrar Registro" required>
 							<option value="" disabled selected hidden>Elige Registro</option>
 								<?php
 									$primerreg=`cat /var/cache/bind/db.frsasir.net |grep -n Registros:|cut -d":" -f1`;
@@ -246,7 +247,7 @@ function prueba(){
 					
 
 						
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br>
 						
 					</div>						
 					</fieldset>		

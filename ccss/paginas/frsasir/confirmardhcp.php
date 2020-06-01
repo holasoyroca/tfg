@@ -8,7 +8,7 @@
 	<script type="text/javascript">    
     
         function confirmardhcp(){
-				<?php exec('cp /var/www/html/frsasir/proximo.txt /etc/dhcp/frsasir/dhcpd.conf')?>
+				<?php exec('cp /var/www/html/frsasir/proximo.txt /etc/dhcp/dhcpd.conf')?>
                 window.location.replace("dhcpd.php");
             }
             confirmardhcp();

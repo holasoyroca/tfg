@@ -30,6 +30,8 @@
         
 ?>
 <?php exec('sh /var/www/html/frsasir/dnsdocs.sh') ?>
+<?php exec('sh /var/www/html/frsasir/invertirdns.sh') ?>
+
 		<div id="header" >
 			<div id="maestre"><img src="images/logo.png" width="75" height="50" >
 			</div>
