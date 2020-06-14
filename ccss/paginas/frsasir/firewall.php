@@ -9,24 +9,20 @@
 	
 		function estado(){
 				activaChecks();
-
 			}
 		
+		//Activamos campos del formulario segun lo que necesite el usuario
 		function activaChecks(){
-				document.formnfs.filtrauto.disabled = !document.formnfs.filtrado.checked;
-				document.formnfs.filtrapers.disabled = !document.formnfs.filtrado.checked;
-				document.formnfs.textpers.disabled = !document.formnfs.filtrapers.checked;
-
-				document.formnfs.ifname.disabled = !document.formnfs.nat.checked;
-
-						
-			}	
-		
+			document.formnfs.filtrauto.disabled = !document.formnfs.filtrado.checked;
+			document.formnfs.filtrapers.disabled = !document.formnfs.filtrado.checked;
+			document.formnfs.textpers.disabled = !document.formnfs.filtrapers.checked;
+			document.formnfs.ifname.disabled = !document.formnfs.nat.checked;		
+		}	
+	
+		//muestra un boton de ayuda que lista los comandos nft en un archivo.txt
 		function ventanaSecundaria (URL){ 
    				window.open(URL,"ayudanft","width=1200,height=300,scrollbars=YES") 
 			} 
-
-
 
 	</script>
 
@@ -51,7 +47,8 @@
 		
 	<h1>Terminal</h1>
 		<br>
-		<?php //exec('sh /var/www/html/frsasir/nftfinal.sh') ?>
+		
+		<!-- Crea un texto temporal para que el usuario pueda leer y confirmar lo que va a hacer despues de pulsar ejecutar -->
 		<?php 
 				$fp2 = fopen("/var/www/html/frsasir/nftfinal.txt", "r");
 				while (!feof($fp2)){
@@ -61,7 +58,8 @@
 				}
 				fclose($fp2);
 		?>
-		
+
+		<!--Boton ejecutar (confirma las ordenes de arriba)  -->
 		<form action="ejecutarnft.php"  method="post" id="formnexec" name="formexec">
 			<strong><b> > </b></strong>
 			 <input type="submit" id="ejecutar" value="EJECUTAR" class="boton">
@@ -72,7 +70,6 @@
 	<div class="display">
 		<h2>FIREWALL</h2><br>
 		<div class="form" >
-			<!-- <form action="encender.php" method="post"  id="encenderform" name="encenderform"><input type="submit" value="Encender" name="encender" id="encender"></form>-->
 			<div style="background-color: #036464b0;">
 				<form action="confirmarnft.php"  method="post" id="formnfs" name="formnfs">
 					<fieldset>
@@ -88,14 +85,16 @@
 								<input type="radio" name="filtra" id="filtrauto" value="filtrauto" onclick='activaChecks();' checked/> AUTOMATICO <sub>Recomendado.</sub> 
 								<br><br>
 								<input type="radio" name="filtra" value="filtrpers" id="filtrapers" onclick='activaChecks();' /> Avanzado. <br><br>
-								<div id="formin2"> <textarea id="textpers" name="textpers" rows="10" cols="40"><?php 
-																													$fp2 = fopen("/var/www/html/frsasir/nftejemplo.txt", "r");
-																													while (!feof($fp2)){
-																														$linea2 = fgets($fp2);
-																														echo $linea2;
-																													}
-																													fclose($fp2);
-																													?> </textarea><br>Recuerda poner ";" al final de cada orden nft.
+								<div id="formin2"> <textarea id="textpers" name="textpers" rows="10" cols="40">
+									<?php 
+										$fp2 = fopen("/var/www/html/frsasir/nftejemplo.txt", "r");
+										while (!feof($fp2)){
+											$linea2 = fgets($fp2);
+											echo $linea2;
+											}
+										fclose($fp2);
+									?> 
+									</textarea><br>Recuerda poner ";" al final de cada orden nft.
 								 </div>
 								 <a class="botonayuda" href="javascript:ventanaSecundaria('nftayuda.txt')"> AYUDA</a>
 							</div>
@@ -103,9 +102,12 @@
 							<hr>
 							<br>
 							<br>
+							<!-- Habilita NAT automaticamente -->
 							<h1>NAT</h1><br>
 							<div id="formin2">
 								<input type="checkbox" id="nat" name="nat" onclick='activaChecks();' /> HABILITAR NAT. <br>
+								
+								<!-- muestra una lista de las interfaces de red que hay en la maquina -->
 								<div id="formin2">
 								Interfaz:
 									<select name="ifname">
@@ -151,6 +153,8 @@
 				}
 				fclose($fp);
 			?>
+
+			<!-- Para hacer un SOS sustituimos el archivos de backup por el original. Todo esto se hace en nftejemplo.txt -->
 			<form action="dhcpsos.php" method="post"  id="sosform" name="sosform">
 				<input type="submit" value="¡SOS!" name="sos" id="sos" style="color:azure;background-color: black; float:right;">
 			</form>

@@ -1,5 +1,6 @@
-[Sun Jun 07 19:47:43.681969 2020] [mpm_prefork:notice] [pid 815] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
-[Sun Jun 07 19:47:43.681983 2020] [core:notice] [pid 815] AH00094: Command line: '/usr/sbin/apache2'
+[Sun Jun 14 00:06:26.669950 2020] [mpm_prefork:notice] [pid 716] AH00163: Apache/2.4.29 (Ubuntu) configured -- resuming normal operations
+[Sun Jun 14 00:06:26.669963 2020] [core:notice] [pid 716] AH00094: Command line: '/usr/sbin/apache2'
+To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
 /var/www/html/frsasir/dnsdocs.sh: 15: /var/www/html/frsasir/dnsdocs.sh: cannot create anteriordns.txt: Permission denied
 /var/www/html/frsasir/dnsdocs.sh: 16: /var/www/html/frsasir/dnsdocs.sh: cannot create anteriordns.txt: Permission denied
 /var/www/html/frsasir/dnsdocs.sh: 17: /var/www/html/frsasir/dnsdocs.sh: cannot create anteriordns.txt: Permission denied
@@ -8,5 +9,4 @@
 /var/www/html/frsasir/dnsdocs.sh: 20: /var/www/html/frsasir/dnsdocs.sh: cannot create anteriordns.txt: Permission denied
 /var/www/html/frsasir/dnsdocs.sh: 21: /var/www/html/frsasir/dnsdocs.sh: cannot create anteriordns.txt: Permission denied
 /var/www/html/frsasir/dnsdocs.sh: 22: /var/www/html/frsasir/dnsdocs.sh: cannot create anteriordns.txt: Permission denied
-To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
 To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt

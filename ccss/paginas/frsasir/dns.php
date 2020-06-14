@@ -7,12 +7,13 @@
 	
 	<script type="text/javascript"> 
 		
-		
+		//llamamos al script que leeran los documentos que tienen la configuracion actual
 		<?php exec('sh /var/www/html/frsasir/dnsdocs.sh') ?>
 		<?php exec('sh /var/www/html/frsasir/invertirdns.sh') ?>
-		<?php //exec('sh /var/www/html/frsasir/dhcplease.sh') ?>
+		//llamamos al script que leeran el status del servidor
 		<?php $estadodns = exec('service bind9 status |grep Active:|cut -d" " -f 5');?>
 
+		//activa y desactiva  los botones de encender y apagar dependiendo del estado
 		function encender(){
 			var encender = 'on';
 		}
@@ -21,6 +22,7 @@
 			var encender = 'off';	
 		}
 
+		//deshabilita y habilita el distintas partes del formulario dependiendo de que checkbox este activo
 		function estado(){
 			var estadodns2 = '<?php echo "$estadodns" ?> ';
 			if (estadodns2 == "inactive "){
@@ -39,15 +41,11 @@
 			};
 		}	
 			function deshab() {
-				//alert('deshab2');
 				frm = document.forms['form1'];
 				for(i=1; ele=frm.elements[i]; i++)
 				ele.disabled=true;	
 			}
-			//function hab(){
-			//alert('hab2');
-			//alert(estadodns2);
-			//}	
+	
 
 function prueba(){
 	alert("holas");
@@ -86,7 +84,6 @@ function prueba(){
 	<div id="header" >
 		<div id="maestre"><img src="images/logo.png" width="75" height="50" ></div>
 			<div class="wrap">
-				<!--	<p><br />El mejor festival de Ciudad Real dentro de un instituto!!!</p>-->
 				<h1 id="logotext"><a href="#">FRSASIR</a>
 			</h1>
 			<ul id="menu" >
@@ -102,8 +99,12 @@ function prueba(){
 	
 		<b><u>CONFIGURACÓN ACTUAL:</u></b><br><br>
 		<u>PARAMETROS</u>: <br><br>
-				<?php //parametros
+				
+				
+				<!-- se recortan las variables del documento db.frsasir.net para una mejor presentacion -->
+				<!-- se imprime las variables de toda la configuracion bind9 -->
 
+				<?php //parametros
 					$ipserver=`ifconfig | head -2|tail -1|cut -c13-25`;
 					$nameserver=`cat /var/cache/bind/db.frsasir.net |grep ORIGIN|cut -d" " -f2`;
 					$nversion=`cat /var/cache/bind/db.frsasir.net |grep version|cut -d";" -f1`;
@@ -132,6 +133,7 @@ function prueba(){
 				?>		<br><br>
 
 			<u>REGISTROS</u>: 
+					<!-- Se copian todos los registros dns guardados -->
 				<?php 
 					$registrosall=`cat /var/cache/bind/db.frsasir.net| wc -l`;
 					for ($i = 17; $i <= $registrosall; $i++) {
@@ -152,6 +154,8 @@ function prueba(){
 				?> <br><br>	
 				
 
+								<!-- Para hacer un SOS sustituimos el archivos de backup por el original. Todo esto se hace en dnssos.php -->
+
 			<form action="dnssos.php" method="post"  id="sosform" name="sosform">
 				<input type="submit" value="¡SOS!" name="sos" id="sos" style="color:azure;background-color: black; float:right;">
 			</form>
@@ -169,6 +173,7 @@ function prueba(){
 		<div class="form" >
 
 
+			<!-- Los botones encender y apagar mandan a una pagina php que solo tienen la orden de encender/apagar respectivamente y volver a dhcpd.php -->
 			<form action="encenderdns.php" method="post"  id="encenderform" name="encenderform">
 				<input type="submit" value="Encender" name="encender" id="encender">
 			</form>
@@ -176,58 +181,62 @@ function prueba(){
 				<input type="submit" value="Apagar" name="apagar" id="apagar">	
 			</form>
 			<br><br>
+
+
+			<!-- El formulario en realidad son 3 formularios distintos con un submit dependiendo lo que el usuario quiera hacer -->
 			<div style="background-color: #036464b0;">
+
+			<!-- El primer formulario es para insertar nuevos registros, los datos son enviados a dnsinsertar.php -->
 			<form action="dnsinsertar.php"  method="post" id="forminsert" name="forminsert">
 					<fieldset>
-						<legend>&nbsp;&nbsp;&nbsp; <b style="color:azure; text-shadow:black;">Configuracion del servidor DNS</b><br></legend>
-					<br> 
+						<legend>&nbsp;&nbsp;&nbsp; <b style="color:azure; text-shadow:black;">Configuracion del servidor DNS</b><br></legend><br> 
 					<div id="formin">  
+				
+				NUMERO DE REGISTROS
+				<h3>CONTAR</h3>
+				<?php $nregistros = exec("awk 'NR>=15&&NR<=40' /var/cache/bind/db.frsasir.net|wc -l");?>
+				<br>Hay	<?php echo($nregistros); ?> en el servidor DNS. <br><br>	
+
+				<h3>INSERTAR REGISTRO</h3>				
+				<table style="width:100%; text-align: center;">
+					<tr>
+						<td style="width:20%;background-color:azure;">Nombre</td>
+						<td style="width:5%;background-color:azure;">Internet</td>
+						<td style="width:5%;background-color:azure;">Enlace</td>
+						<td style="width:10%;background-color:azure;">IP</td>
+						<td style="width:20%;"></td>
+					</tr>
+					<tr>
+						<td style="width:20%;background-color:azure;">
+								<input type="text" id="nombreg" name="nombreg" placeholder="Nombre del Registro" required>
+						</td>
+						<td style="width:5%;background-color:azure;">
+								IN
+						</td>
+						<td style="width:5%;background-color:azure;">
+								<select name="modo" id="modo" required>
+									<option value="NS" >NS</option>
+									<option value="A" selected >A</option>
+									<option value="MX" >MX</option>
+									<option value="CNAME" >CNAME</option>
+									<option value="PTR" >PTR</option>
+								</select>
+						</td>
 						
-						NUMERO DE REGISTROS
-						<h3>CONTAR</h3>
-						<?php $nregistros = exec("awk 'NR>=15&&NR<=40' /var/cache/bind/db.frsasir.net|wc -l");?>
-						<br>Hay	<?php echo($nregistros); ?> en el servidor DNS. <br><br>	
+						<td style="width:5%;background-color:azure;">
+								<input type="text" id="destinoreg" name="destinoreg" placeholder="Direccion IP" required>
+						</td>
+					</tr>
+				</table>
+				<div id="botones2">
+					<input type="submit" id="inserreg" name="inserreg" value="INSERTAR">
+				</div>
+				<br><br>
+			</form>
 
-				<h3>INSERTAR REGISTRO</h3>
-					
-						<table style="width:100%; text-align: center;">
-							<tr>
-								<td style="width:20%;background-color:azure;">Nombre</td>
-								<td style="width:5%;background-color:azure;">Internet</td>
-								<td style="width:5%;background-color:azure;">Enlace</td>
-								<td style="width:10%;background-color:azure;">IP</td>
-								<td style="width:20%;"></td>
-							</tr>
-							<tr>
-								<td style="width:20%;background-color:azure;">
-										<input type="text" id="nombreg" name="nombreg" placeholder="Nombre del Registro" required>
-									</td>
-								<td style="width:5%;background-color:azure;">
-										IN
-									</td>
-								<td style="width:5%;background-color:azure;">
-										<select name="modo" id="modo" required>
-											<option value="NS" >NS</option>
-											<option value="A" selected >A</option>
-											<option value="MX" >MX</option>
-											<option value="CNAME" >CNAME</option>
-											<option value="PTR" >PTR</option>
-										</select>
-									</td>
-								
-								<td style="width:5%;background-color:azure;">
-										<input type="text" id="destinoreg" name="destinoreg" placeholder="Direccion IP" required>
-									</td>
-							</tr>
-						</table>
-						<div id="botones2">
-							<input type="submit" id="inserreg" name="inserreg" value="INSERTAR">
-						</div>
-								<br><br>
-					</form>
-
-				<h3>BORRAR REGISTRO</h3>
-				<form action="dnsborrar.php"  method="post" id="formborra" name="formborra">
+				<!-- El segundo formulario manda los datos a dnsborrar.php que se encarga de eliminar el registro que coincide con los datos introducidos -->
+			<h3>BORRAR REGISTRO</h3>
+			<form action="dnsborrar.php"  method="post" id="formborra" name="formborra">
 				Selecciona el registro que quiere borrar:     > 
 						<select id="borrareg" name="borrareg" value="Selecciona" aria-placeholder="Borrar Registro" required>
 							<option value="" disabled selected hidden>Elige Registro</option>
@@ -243,17 +252,12 @@ function prueba(){
 						<div id="botones2">
 							<input type="submit" id="botonborrar" name="botonborrar" value="BORRAR">	
 						</div>
-					</form>					
-					
-
-						
-						<br><br><br><br><br><br><br><br>
-						
+			</form>					
+			<br><br><br><br><br><br><br><br>				
 					</div>						
-					</fieldset>		
+				</fieldset>		
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

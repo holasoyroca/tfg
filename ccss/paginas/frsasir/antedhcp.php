@@ -13,4 +13,4 @@
 			window.location.replace("dhcpd.php");}
 		
             historial();
-    </script>
+   	 </script>

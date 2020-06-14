@@ -7,6 +7,7 @@
 	
 	<script type="text/javascript"> 
 		
+		//creamos las variables de dhcpd.conf para escribirlas mas tarde en un documento de texto
 		<?php $ipserver = exec('cat /etc/dhcp/dhcpd.conf| grep server-identifier|cut -d" " -f2|cut -d";" -f1')?>
 		<?php $maskserver = exec('cat /etc/dhcp/dhcpd.conf|grep subnet-mask|cut -d" " -f3|cut -d";" -f1')?>
 		<?php $gatewayserver = exec('cat /etc/dhcp/dhcpd.conf| grep routers|cut -d" " -f3|cut -d";" -f1')?>
@@ -17,11 +18,14 @@
 		<?php $maxtime = exec('cat /etc/dhcp/dhcpd.conf|grep max-lease|cut -d" " -f2|cut -d";" -f1')?>
 		
 		
-
+		//llamamos al script que leeran los documentos que tienen la configuracion actual
 		<?php exec('sh /var/www/html/frsasir/dhcpdocs.sh') ?>
+		//llamamos al script que leeran los equipos conectados al servicio dhcpd
 		<?php exec('sh /var/www/html/frsasir/dhcplease.sh') ?>
+		//llamamos al script que leeran el status del servidor
 		<?php $estado = exec('service isc-dhcp-server status |grep Active:|cut -d" " -f 5')?>
 
+		//activa y desactiva  los botones de encender y apagar dependiendo del estado
 		function encender(){
 			var encender = 'on';
 		}
@@ -46,14 +50,14 @@
 					hab();
 			};
 		}	
+
+			//deshabilita y habilita el distintas partes del formulario dependiendo de que checkbox este activo
 			function deshab() {
-				//alert('deshab2');
 				frm = document.forms['form1'];
 				for(i=1; ele=frm.elements[i]; i++)
 				ele.disabled=true;	
 			}
 			function hab(){
-			//alert('hab2');
 			alert(estado2);
 			}	
 
@@ -103,7 +107,7 @@
 	<div id="header" >
 		<div id="maestre"><img src="images/logo.png" width="75" height="50" ></div>
 		<div class="wrap">
-			<!--	<p><br />El mejor festival de Ciudad Real dentro de un instituto!!!</p>-->
+			
 			<h1 id="logotext"><a href="#">FRSASIR</a>
 			</h1>
 			<ul id="menu" >
@@ -117,6 +121,7 @@
 	</div>
 	<div id="side">
 		<b><u>CONFIGURACÓN ACTUAL:</u></b><br>
+			<!-- leemos la configuracion actual anteriormente.txt escrita gracias al script dhcpdocs.sh -->
 			<?php 
 				$fp = fopen("/var/www/html/frsasir/anteriormente.txt", "r");
 				while (!feof($fp)){
@@ -126,6 +131,7 @@
 				}
 				fclose($fp);
 			?>
+			<!-- Para hacer un SOS sustituimos el archivos de backup por el original. Todo esto se hace en dhcpsos.php -->
 			<form action="dhcpsos.php" method="post"  id="sosform" name="sosform">
 				<input type="submit" value="¡SOS!" name="sos" id="sos" style="color:azure;background-color: black; float:right;">
 			</form>
@@ -136,6 +142,7 @@
 		</div>
 		<h2>DHCP</h2><br>
 		<div class="form" >
+				<!-- Los botones encender y apagar mandan a una pagina php que solo tienen la orden de encender/apagar respectivamente y volver a dhcpd.php -->
 			<form action="encender.php" method="post"  id="encenderform" name="encenderform">
 				<input type="submit" value="Encender" name="encender" id="encender">
 			</form>
@@ -207,6 +214,7 @@
 	<div id="footer">
 		<h1>Equipos Clientes</h1>
 		<br>
+		<!-- Copiamos dhcp-lease-list a dhcplease.txt para luego imprimirlo en pantalla, actualizando el documento cada vez que se refresca la pagina. -->
 		<?php exec('dhcp-lease-list > /var/www/html/frsasir/dhcplease.txt'); ?>
 		<?php 
 				$fp2 = fopen("/var/www/html/frsasir/dhcplease.txt", "r");
